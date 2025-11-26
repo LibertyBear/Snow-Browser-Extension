@@ -1,0 +1,38 @@
+#christmas-snow-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 999999;
+}
+
+.christmas-snowflake {
+  position: absolute;
+  top: -10vh;
+  color: white;
+  font-size: 10px;
+  opacity: 0;
+  user-select: none;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  will-change: transform, opacity;
+  animation-name: christmas-snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes christmas-snow-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--x-drift, 0px), 110vh, 0);
+    opacity: 1;
+  }
+}
